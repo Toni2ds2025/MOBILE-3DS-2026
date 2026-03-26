@@ -1,19 +1,27 @@
 import React, {Component} from "react";
-import { View, Text, StyleSheet, TextInput } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Image } from 'react-native';
 
 class Aula03 extends Component{
     render () {
         return(
             <View style={ styles.container }>
-                <TextInput
-                    style={ styles.input }
-                />
-                <TextInput
-                    style={ styles.input }
-                />
-                <TextInput
-                    style={ styles.input }
-                />
+                <View style={ styles.conteudo }>
+
+                    <Image
+                        style={ styles.logo }
+                        source={require('../img/Logo_Bola_PNG.png')}
+                    />
+
+                    <Text style={ styles.label  }> Usuário: </Text>
+                    <TextInput
+                        style={ styles.input }
+                    />
+
+                    <Text style={ styles.label  }> Senha: </Text>
+                    <TextInput
+                        style={ styles.input }
+                    />
+                </View>
             </View>
         )
     }
@@ -28,6 +36,24 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'black',
+    },
+
+    conteudo: {
+        borderColor: 'red',
+        borderWidth: 1,
+        width: 300,
+        height: 300,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
+    logo: {
+        width: 100,
+        height: 100,
+    },
+
+    label: {
+        color: 'white',
     },
 
     input: {
