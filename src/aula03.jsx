@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { View, Text, StyleSheet, TextInput, Image } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Image, Button } from 'react-native';
 
 class Aula03 extends Component{
     render () {
@@ -9,7 +9,8 @@ class Aula03 extends Component{
 
                     <Image
                         style={ styles.logo }
-                        source={require('../img/Logo_Bola_PNG.png')}
+                        //source={require('../img/Logo_Bola_PNG.png')}
+                        source={{uri: "https://media.tenor.com/-85FBf2KCukAAAAM/hatsune-miku-project-sekai.gif"}}
                     />
 
                     <Text style={ styles.label  }> Usuário: </Text>
@@ -22,12 +23,15 @@ class Aula03 extends Component{
                         style={ styles.input }
                     />
 
-                    <TextInput style={  styles.botao }>
-                        <Text style={ styles.textoBotao }>Entrar</Text>
-                    </TextInput>
+                    <Button 
+                        style={ styles.botao }
+                        title="Entrar"
+                        color="green"
+                    />
+                    
                 </View>
             </View>
-        )
+        )   
     }
 }
 
@@ -43,10 +47,11 @@ const styles = StyleSheet.create({
     },
 
     conteudo: {
-        borderColor: 'red',
+        borderColor: 'white',
+        borderRadius: 10,
         borderWidth: 1,
         width: 300,
-        height: 300,
+        height: 400,
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -67,6 +72,12 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 10,
         backgroundColor: 'white',
+        borderRadius: 5,
+    },
+
+    botao: {
+        color: 'white',
+        padding: 20,
         borderRadius: 5,
     },
 })
