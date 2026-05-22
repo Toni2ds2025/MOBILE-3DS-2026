@@ -1,7 +1,12 @@
 import React, {Component} from "react";
-import { View, Text, StyleSheet, TextInput, Image, Button } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Image, Button, TouchableOpacity, Alert } from 'react-native';
 
 class Aula03 extends Component{
+
+    handleLogin = () => {
+        Alert.alert("Ação", "KanaMafu é o melhor ship!")
+    }
+
     render () {
         return(
             <View style={ styles.container }>
@@ -23,11 +28,9 @@ class Aula03 extends Component{
                         style={ styles.input }
                     />
 
-                    <Button 
-                        style={ styles.botao }
-                        title="Entrar"
-                        color="green"
-                    />
+                    <TouchableOpacity style={styles.botao} onPress={this.handleLogin}>
+                        <Text style={styles.botaoTexto}>Entrar</Text>
+                    </TouchableOpacity>
                     
                 </View>
             </View>
@@ -47,9 +50,6 @@ const styles = StyleSheet.create({
     },
 
     conteudo: {
-        borderColor: 'white',
-        borderRadius: 10,
-        borderWidth: 1,
         width: 300,
         height: 400,
         justifyContent: 'center',
@@ -77,7 +77,19 @@ const styles = StyleSheet.create({
 
     botao: {
         color: 'white',
-        padding: 20,
+        fontSize: 16,
+        fontWeight: 'bold',
+        alignItems: 'center',
+    },
+
+    botaoTexto: {
+        backgroundColor: 'green',
+        color: 'black',
+        paddingVertical: 12,
+        paddingHorizontal: 22,
         borderRadius: 5,
+        marginTop: 15,
+        alignItems: 'center',
+        width: 250,
     },
 })
