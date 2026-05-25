@@ -1,10 +1,5 @@
-require('dotenv').config();
-const express = require('express');
-const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
-const cors = require ('cors');
-const jwt = require('jsonwebtoken');
+const { mongoClient } = require('mongodb');
 
-const app = express();
-app.use(express.json());
-app.use(cors());
+const uri = process.env.MONGO_URI || 'mongodb://localhost:27017/react-native';
+
+const client = new MongoClient(uri);
